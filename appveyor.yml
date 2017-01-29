@@ -1,0 +1,18 @@
+version: 0.1.0.{build}
+
+platform: x64
+
+clone_folder: c:\gopath\src\github.com\rosenhouse\golang-os-info
+
+environment:
+  GOPATH: c:\gopath
+
+install:
+  - echo %PATH%
+  - echo %GOPATH%
+  - set PATH=%GOPATH%\bin;c:\go\bin;%PATH%
+  - go version
+  - go env
+
+build_script:
+  - go run main.go
